@@ -1,0 +1,129 @@
+body {
+    font-family: 'Prelo', sans-serif;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 1rem;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+}
+
+.container-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container-rigth {
+    margin-right: 20px;
+}
+
+.container-left {
+    margin-left: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .container-controls {
+        flex-direction: column;
+    }
+
+    .container-left,
+    .container-rigth {
+        margin-bottom: 5px;
+    }
+}
+
+.primary-button {
+    background: #FFDD00;
+    font-family: 'Prelo', sans-serif;
+    font-size: 14px;
+    color: #0F265C;
+    padding: 12px 25px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    min-width: 120px;
+    box-sizing: border-box;
+    line-height: 24px;
+    margin-right: 20px;
+}
+
+.primary-button:hover:hover {
+    background: #FFD100;
+    text-decoration: none !important;
+    color: #0F265C;
+}
+
+.primary-button:focus:focus {
+    border: 2px solid #2F7ABF;
+    padding: 10px 23px;
+}
+
+.primary-button:disabled,
+.primary-button[disabled] {
+    opacity: 0.4;
+}
+
+.primary-button:active:active {
+    background-color: #FFC500;
+}
+
+
+.secondary-button {
+    background: #E9ECF3;
+    font-family: 'Prelo', sans-serif;
+    font-size: 14px;
+    color: #0F265C;
+    padding: 11px 25px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: none;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #D4D8E1;
+    min-width: 120px;
+    box-sizing: border-box;
+    line-height: 24px;
+    margin-right: 20px;
+
+
+}
+
+.secondary-button:hover:hover {
+    background: #C7CFE1;
+}
+
+.secondary-button:focus:focus {
+    border: 2px solid #2F7ABF;
+    padding: 10px 23px;
+}
+
+.secondary-button:disabled,
+.secondary-button[disabled] {
+    opacity: 0.4;
+}
+
+.secondary-button:active:active {
+    background-color: #B5BFD6;
+}
+
+input[readonly] {
+    background-color: #f0f0f0;
+    color: #888;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,69 @@
+<form [formGroup]="form">
+
+    <div class="form-container">
+        <div class="form-column">
+            <div class="form-control-container">
+                <label for="id" class="form-label">ID:</label>
+                <input type="text" id="id" name="id" formControlName="id" [readonly]="isEdit"
+                    [ngClass]="{ 'input-error': control?.['id']?.errors &&  control?.['id']?.touched}">
+                <span *ngIf="control?.['id']?.errors?.['required']">Este campo es requerido</span>
+                <span *ngIf="control?.['id']?.errors && !control?.['id']?.errors?.['required'] && !control?.['id']?.errors?.['duplicate']">Id no válido!</span>
+                <span *ngIf="control?.['id']?.errors?.['duplicate']">Id no válido!</span>
+
+                <span class="label-error"></span>
+
+            </div>
+            <div class="form-control-container">
+                <label for="Descripción" class="form-label">Descripción:</label>
+                <input type="text" id="Descripción" name="Descripción" formControlName="description"
+                    [ngClass]="{ 'input-error': control?.['description']?.errors &&  control?.['description']?.touched}">
+                <span *ngIf="control?.['description']?.errors?.['required']">Este campo es requerido</span>
+                <span *ngIf="control?.['description']?.errors && !control?.['description']?.errors?.['required']">Descripción no válido!</span>
+                <span class="label-error"></span>
+
+            </div>
+            <div class="form-control-container">
+                <label for="fliberacion" class="form-label">Fecha Liberación:</label>
+                <input type="date" id="fliberacion" name="fliberacion" formControlName="date_release" (input)="updateRevisionDate()" min="{{todate | date:'yyyy-MM-dd'}}"
+                    [ngClass]="{ 'input-error': control?.['date_release']?.errors && control?.['date_release']?.touched}">
+                <span *ngIf="control?.['date_release']?.errors?.['required']">Este campo es requerido</span>
+                <span *ngIf="control?.['date_release']?.errors && !control?.['date_release']?.errors?.['required']">Fecha de liberación no válido!</span>
+
+                <span class="label-error"></span>
+
+            </div>
+        </div>
+        <div class="form-column">
+            <div class="form-control-container">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" formControlName="name"
+                    [ngClass]="{ 'input-error': control?.['name']?.errors  &&  control?.['name']?.touched}">
+                <span *ngIf="control?.['name']?.errors?.['required']">Este campo es requerido</span>
+                <span *ngIf="control?.['name']?.errors && !control?.['name']?.errors?.['required']">Nombre no válido!</span>
+                <span class="label-error"></span>
+
+            </div>
+            <div class="form-control-container">
+                <label for="logo" class="form-label">Logo:</label>
+                <input type="text" id="logo" name="logo" formControlName="logo"
+                    [ngClass]="{ 'input-error': control?.['logo']?.errors  &&  control?.['logo']?.touched}">
+                <span *ngIf="control?.['logo']?.errors?.['required']">Este campo es requerido</span>
+                
+                <span class="label-error"></span>
+            </div>
+            <div class="form-control-container">
+                <label for="frenovacion" class="form-label">Fecha Revisión:</label>
+                <input type="date" id="frenovacion" name="frenovacion" formControlName="date_revision" readonly
+                    [ngClass]="{ 'input-error': control?.['date_revision']?.errors  &&  control?.['date_revision']?.touched}">
+                <span *ngIf="control?.['date_revision']?.errors?.['required'] ">Este campo es requerido</span>
+                <span *ngIf="control?.['date_revision']?.errors && !control?.['date_revision']?.errors?.['required']">Fecha revisión no válido!</span>
+
+                <span class="label-error"></span>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="button" class="secondary-button" (click)="reset()">Reiniciar</button>
+            <button type="button" class="primary-button " (click)="send()" [disabled]="form.invalid">Enviar</button>
+        </div>
+    </div>
+</form>

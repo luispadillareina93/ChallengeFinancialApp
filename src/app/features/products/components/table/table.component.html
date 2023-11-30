@@ -1,0 +1,39 @@
+<table class="table-container" aria-describedby="'Data Table'">
+    <thead>
+        <tr>
+            <th *ngFor="let item of headers">
+                {{item}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listData | FilterPipe:{name:searchText}:filterMetaData" #objs>
+            <td>
+                <div class="container-logo">
+                    <img [src]="item.logo" alt="logo">
+                </div>
+            </td>
+            <td>{{item.name}}</td>
+            <td style="word-wrap: break-word;">{{item.description}}</td>
+            <td>{{item.date_release | date :'dd/MM/yyyy' }}</td>
+            <td>{{item.date_revision | date :'dd/MM/yyyy' }}</td>
+            <td>
+                <app-context-menu [id]="item.id" (delete)="deleteEvent($event)"
+                    (edit)="editEvent($event)"></app-context-menu>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<div class="table-footer">
+    <div class="counter">
+        <div>
+            {{ filterMetaData.count }} Resultados
+        </div>
+    </div>
+    <div class="paginator">
+        <select  [(ngModel)]="itemsPerPage" (change)="changeItemsPerPage($event)" >
+            <option *ngFor="let item of paginator">{{ item}}</option>
+        </select>
+    </div>
+</div>

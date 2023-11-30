@@ -1,0 +1,13 @@
+<div class="container-controls">
+    <div class="container-left">
+        <input class="form-control" placeholder="Search" [(ngModel)]="searchText">
+    </div>
+    <div class="container-rigth">
+        <button class="primary-button" [routerLink]="['/add']"> Agregar</button>
+    </div>
+</div>
+
+<app-confirmation-modal [showModal]="showModal" [description]="this.selectedItem?.name??''" (onConfirm)="deleteEvent()" (onCancel)="closeModal()">
+</app-confirmation-modal>
+<app-table [headers]="headers" [data]="productList" [searchText]="searchText" [paginator]="paginator" (delete)="confirmDelete($event)" 
+    (edit)="editEvent($event)"></app-table>
