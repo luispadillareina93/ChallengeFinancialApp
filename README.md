@@ -3,6 +3,20 @@ Challenge Financial Product App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
+# Configuración Enviroment
+
+Abre el archivo `environment.ts` con tu editor de código y actualiza las variables según tus necesidades locales. Por ejemplo:
+
+```typescript
+// environment.local.ts
+
+export const environment = {
+  production: false,
+  baseUrl: 'https://tu-nueva-url-base',
+  authorId: 'tu-nuevo-author-id'
+};
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
