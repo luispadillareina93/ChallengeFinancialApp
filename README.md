@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Configuración Enviroment
 
-Abre el archivo `environment.ts` con tu editor de código y actualiza las variables según tus necesidades locales. Por ejemplo:
+Abre el archivo `environment.ts` con tu editor de código y actualiza las variables según tus necesidades. Por ejemplo:
 
 ```typescript
 // environment.local.ts
