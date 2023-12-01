@@ -4,7 +4,7 @@
 }
 
 table {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     border-collapse: collapse;
 }
@@ -12,15 +12,22 @@ table {
 th,
 td {
     padding: 12px;
-    text-align: left;
+    text-align: center;
+    font-size: 12px;
 }
-
 th {
-    background-color: #ffff;
+    background-color: #f4f5fb;
+    padding: 25px;
+    font-size: 12px;
+    text-align: center;
+}
+tr{
+    background-color:  #ffff ;
+    border-bottom: 1px solid #ddd;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #ffff;
 }
 
 
@@ -28,8 +35,6 @@ tbody tr:nth-child(even) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 150px;
-    padding-right: 150px;
     padding-top: 10px;
     background-color: #ffff;
 }
@@ -70,7 +75,7 @@ tbody tr:nth-child(even) {
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:400) {
     .table-container {
         overflow-x: auto;
     }
@@ -86,7 +91,7 @@ tbody tr:nth-child(even) {
 
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:400) {
     .table-footer {
         flex-direction: column;
     }

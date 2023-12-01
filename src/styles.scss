@@ -1,5 +1,7 @@
 body {
     font-family: 'Prelo', sans-serif;
+    background-color: #f4f5fb;
+    margin: 0px;
 }
 
 .form-control {
@@ -18,14 +20,16 @@ body {
 }
 
 .container-controls {
+    margin-left: 8.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .container-rigth {
-    margin-right: 20px;
+    margin-right: 10%;
 }
 
 .container-left {

@@ -47,6 +47,7 @@ export class FormBodyComponent  implements OnInit  {
 
   updateRevisionDate() {
     const fecha = new Date(this.form.get('date_release')?.value);
+    this.form.get('date_release')?.setValue(fecha.toISOString().substring(0, 10));
     fecha.setFullYear(fecha.getFullYear() + 1);
     this.form.get('date_revision')?.setValue(fecha.toISOString().substring(0, 10));
   }
