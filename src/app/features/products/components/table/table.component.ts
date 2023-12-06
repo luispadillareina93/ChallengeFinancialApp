@@ -25,7 +25,7 @@ export class TableComponent {
   filterMetaData = { count: 0 };
   itemsPerPage: number = 20;
   listData: Product[] = [];
-
+ 
   ngOnChanges() {
     this.listData = this.data.slice(0, this.itemsPerPage);
   }
@@ -42,4 +42,6 @@ export class TableComponent {
     this.itemsPerPage = count;
     this.listData = this.data.slice(0, this.itemsPerPage);
   }
+
+
 }

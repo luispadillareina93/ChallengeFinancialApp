@@ -1,8 +1,13 @@
 <table class="table-container" aria-describedby="'Data Table'">
     <thead>
         <tr>
-            <th *ngFor="let item of headers">
-                {{item}}
+            <th *ngFor="let item of headers  let index = index">
+                <div class="header-content">
+                    {{item}}
+                    <img *ngIf="index>=2" class="info-icon"
+                        src="https://cdn.icon-icons.com/icons2/2483/PNG/512/info_embossed_icon_149925.png" alt="Info">
+
+                </div>
             </th>
             <th>
             </th>
@@ -16,9 +21,9 @@
                 </div>
             </td>
             <td>{{item.name}}</td>
-            <td style="word-wrap: break-word;">{{item.description}}</td>
-            <td>{{item.date_release | date :'dd/MM/yyyy' }}</td>
-            <td>{{item.date_revision | date :'dd/MM/yyyy' }}</td>
+            <td style="word-wrap: break-word;">{{item.description}} </td>
+            <td>{{ item.date_release | date :'dd/MM/yyyy':'UTC' }}</td>
+            <td>{{item.date_revision | date :'dd/MM/yyyy':'UTC' }}</td>
             <td>
                 <app-context-menu [id]="item.id" (delete)="deleteEvent($event)"
                     (edit)="editEvent($event)"></app-context-menu>
@@ -34,7 +39,7 @@
         </div>
     </div>
     <div class="paginator">
-        <select  [(ngModel)]="itemsPerPage" (change)="changeItemsPerPage($event)" >
+        <select [(ngModel)]="itemsPerPage" (change)="changeItemsPerPage($event)">
             <option *ngFor="let item of paginator">{{ item}}</option>
         </select>
     </div>

@@ -9,21 +9,28 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
   }
-  
+  .text-modal{
+    margin:20px 20px 80px 20px;
+    font-size: 20px;
+    
+  }
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
     border: 1px solid #888;
-    width: 25%;
+    width: 30%;
     border-radius: 8px;
   }
   .button-container {
     text-align: center;
+    align-items: center;
+    margin: 5px;
   }
   .divider {
     margin: 15px 0;
     border-top: 1px solid #ccc;
+    width: 100%;
   } 
   
   .show {
